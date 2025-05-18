@@ -19,7 +19,11 @@ class Game {
    * initial state.
    */
   constructor(initialState) {
-    this.board = initialState;
+    this.board =
+      initialState !== undefined
+        ? [...initialState]
+        : this.generateEmptyBoard();
+    /* this.board = [...initialState] ?? this.generateEmptyBoard(); */
     this.score = 0;
     this.status = 'idle';
   }
