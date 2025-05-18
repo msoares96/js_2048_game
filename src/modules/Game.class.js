@@ -21,7 +21,7 @@ class Game {
   constructor(initialState) {
     this.board =
       initialState !== undefined
-        ? [...initialState]
+        ? initialState.map((row) => [...row])
         : this.generateEmptyBoard();
     /* this.board = [...initialState] ?? this.generateEmptyBoard(); */
     this.score = 0;
@@ -301,4 +301,4 @@ class Game {
   }
 }
 
-module.exports = Game;
+export default Game;
